@@ -11,7 +11,13 @@ using namespace std; // making life easier so that we do not need to use std::ci
 
 
 int locateSmallest(int array[], int start, int end){
-	return -1; // fix this!
+	int index = start;
+	for(int i = start; i <= end; i++)	{
+		if(array[i] < array[index])	{
+			index = i;
+		}
+	}
+	return index; // fix this!
 }
 
 //Write the function called replaceVariable in the given interval such that 
@@ -20,7 +26,14 @@ int locateSmallest(int array[], int start, int end){
 //     an int which is the starting index of search,
 //     an int which is the ending point of searchspace
 // function: Search in the array from given start to end index and replace the given target value with 1000
-void replaceVariable() {
+void replaceVariable(int array[], int target, int start, int end) {
+
+	for(int i = start; i <= end; i++)	{
+		if(array[i]==target)	{
+			array[i] = 1000;
+		}
+	}
+
 	return;
 }
 
@@ -29,7 +42,12 @@ void replaceVariable() {
 //write a function called printArray to print out the elements of the given array
 //output: nothing
 //input: the array of integers and its size
-void printArray() {
+void printArray(int array[], int size) {
+
+	for(int i = 0; i <= size; i++)	{
+		cout << array[i];
+	}
+
 	return;
 }
 
@@ -49,5 +67,12 @@ void printArray() {
 
 
 int sumOdds(int array[], int start, int end){
-	return -1;
+	int sum = 0;
+	for(int i = start; i <= end; i++)	{
+		if((array[i])%2==1)	{
+			sum = sum + array[i];
+		}
+	}
+
+	return sum;
 }
